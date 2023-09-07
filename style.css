@@ -99,6 +99,7 @@ a {
         display: flex;
         flex-direction: column;
         margin: 30px 20px;
+        padding: 10px;
     }
     .image-column {
         padding: 25px; 
