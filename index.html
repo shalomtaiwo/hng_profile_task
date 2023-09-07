@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <!-- Link external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="image-column">
+            <img src="https://res.cloudinary.com/dg8os5pul/image/upload/v1694065189/personal/20230820_091310_1_lkh0cv.jpg" alt="ife___dolapo" data-testid="slackDisplayImage">
+        </div>
+        <div class="info-column">
+            <h1 data-testid="slackUserName">ife___dolapo</h1>
+            <div class="profile-info">
+                <p data-testid="currentDayOfTheWeek">Current Day: Monday</p>
+                <p data-testid="currentUTCTime">Current UTC Time: 12:00 PM</p>
+                <p data-testid="myTrack">Track: Frontend</p>
+            </div>
+            <div class="github-link">
+                <p data-testid="githubURL"><a href="your-github-repo-url">GitHub Repository</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to set dynamic data
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const currentDate = new Date();
+        const currentDay = daysOfWeek[currentDate.getUTCDay()];
+        const currentUTC = currentDate.toLocaleTimeString(undefined, { timeZoneName: 'short' });
+
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = `Current Day: ${currentDay}`;
+        document.querySelector('[data-testid="currentUTCTime"]').textContent = `Current UTC Time: ${currentUTC}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adding my custom styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust column widths */
+    text-align: left;
+    padding: 20px;
+    max-width: 600px;
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+.profile-container:hover {
+    transform: scale(1.05);
+}
+
+.image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%; /* Make the image full-screen in its column */
+    border-radius: 6%;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.info-column {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profile-info p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #dbdbdb;
+}
+
+.profile-info i {
+    margin-right: 10px;
+}
+
+.github-link p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+    padding: 15px 0;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    p {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+@media screen and (max-width: 500px) {
+    .profile-container{
+        display: flex;
+        flex-direction: column;
+        margin: 30px 20px;
+    }
+    .image-column {
+        padding: 25px; 
+    }
+}
