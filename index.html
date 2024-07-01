@@ -37,8 +37,12 @@
         document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = `Current Day: ${currentDay}`;
 
         function updateUTCTime() {
-            const currentUTC = Date.now();
-            document.querySelector('[data-testid="currentUTCTime"]').textContent = `Current UTC Time: ${currentUTC}`;
+            const now = new Date();
+const utcHours = now.getUTCHours().toString().padStart(2, '0');
+const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
+const utcSeconds = now.getUTCSeconds().toString().padStart(2, '0');
+const utcTime = `${utcHours}:${utcMinutes}:${utcSeconds}`;
+            document.querySelector('[data-testid="currentUTCTime"]').textContent = `Current UTC Time: ${utcTime}`;
         }
         updateUTCTime();
         setInterval(updateUTCTime, 100);
